@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E7252167219581B200BD8FEF /* CompositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7252166219581B200BD8FEF /* CompositionViewController.swift */; };
+		E7252169219581D900BD8FEF /* Marvel Studios.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E7252168219581D900BD8FEF /* Marvel Studios.mp4 */; };
 		E76CEAEA219404EB0080F456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76CEAE9219404EB0080F456 /* AppDelegate.swift */; };
 		E76CEAEC219404EB0080F456 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76CEAEB219404EB0080F456 /* ViewController.swift */; };
 		E76CEAEF219404EB0080F456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E76CEAED219404EB0080F456 /* Main.storyboard */; };
 		E76CEAF1219404ED0080F456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E76CEAF0219404ED0080F456 /* Assets.xcassets */; };
 		E76CEAF4219404ED0080F456 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E76CEAF2219404ED0080F456 /* LaunchScreen.storyboard */; };
+		E76CEB002194062A0080F456 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76CEAFF2194062A0080F456 /* CameraViewController.swift */; };
+		E76CEB02219408FC0080F456 /* CapturePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76CEB01219408FC0080F456 /* CapturePreview.swift */; };
+		E76CEB0521940EEE0080F456 /* CaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76CEB0421940EEE0080F456 /* CaptureManager.swift */; };
+		E772E8B6219442A50035E819 /* VideoWriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E772E8B5219442A50035E819 /* VideoWriteManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E7252166219581B200BD8FEF /* CompositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionViewController.swift; sourceTree = "<group>"; };
+		E7252168219581D900BD8FEF /* Marvel Studios.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marvel Studios.mp4"; sourceTree = "<group>"; };
 		E76CEAE6219404EB0080F456 /* ZHCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E76CEAE9219404EB0080F456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E76CEAEB219404EB0080F456 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +30,10 @@
 		E76CEAF0219404ED0080F456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E76CEAF3219404ED0080F456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E76CEAF5219404ED0080F456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E76CEAFF2194062A0080F456 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		E76CEB01219408FC0080F456 /* CapturePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePreview.swift; sourceTree = "<group>"; };
+		E76CEB0421940EEE0080F456 /* CaptureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureManager.swift; sourceTree = "<group>"; };
+		E772E8B5219442A50035E819 /* VideoWriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoWriteManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +47,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E725216321957A0B00BD8FEF /* Composition */ = {
+			isa = PBXGroup;
+			children = (
+				E72521652195818A00BD8FEF /* Controller */,
+			);
+			path = Composition;
+			sourceTree = "<group>";
+		};
+		E72521642195817300BD8FEF /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E7252168219581D900BD8FEF /* Marvel Studios.mp4 */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		E72521652195818A00BD8FEF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E7252166219581B200BD8FEF /* CompositionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		E76CEADD219404EB0080F456 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +90,9 @@
 		E76CEAE8219404EB0080F456 /* ZHCamera */ = {
 			isa = PBXGroup;
 			children = (
+				E72521642195817300BD8FEF /* Resource */,
+				E725216321957A0B00BD8FEF /* Composition */,
+				E76CEAFB219405B70080F456 /* Capture */,
 				E76CEAE9219404EB0080F456 /* AppDelegate.swift */,
 				E76CEAEB219404EB0080F456 /* ViewController.swift */,
 				E76CEAED219404EB0080F456 /* Main.storyboard */,
@@ -62,6 +101,49 @@
 				E76CEAF5219404ED0080F456 /* Info.plist */,
 			);
 			path = ZHCamera;
+			sourceTree = "<group>";
+		};
+		E76CEAFB219405B70080F456 /* Capture */ = {
+			isa = PBXGroup;
+			children = (
+				E76CEB0321940E990080F456 /* Manager */,
+				E76CEAFE219406150080F456 /* Controller */,
+				E76CEAFD2194060F0080F456 /* View */,
+				E76CEAFC219406080080F456 /* Model */,
+			);
+			path = Capture;
+			sourceTree = "<group>";
+		};
+		E76CEAFC219406080080F456 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E76CEAFD2194060F0080F456 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E76CEB01219408FC0080F456 /* CapturePreview.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E76CEAFE219406150080F456 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E76CEAFF2194062A0080F456 /* CameraViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E76CEB0321940E990080F456 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E76CEB0421940EEE0080F456 /* CaptureManager.swift */,
+				E772E8B5219442A50035E819 /* VideoWriteManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +207,7 @@
 				E76CEAF4219404ED0080F456 /* LaunchScreen.storyboard in Resources */,
 				E76CEAF1219404ED0080F456 /* Assets.xcassets in Resources */,
 				E76CEAEF219404EB0080F456 /* Main.storyboard in Resources */,
+				E7252169219581D900BD8FEF /* Marvel Studios.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +219,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E76CEAEC219404EB0080F456 /* ViewController.swift in Sources */,
+				E772E8B6219442A50035E819 /* VideoWriteManager.swift in Sources */,
+				E76CEB02219408FC0080F456 /* CapturePreview.swift in Sources */,
+				E7252167219581B200BD8FEF /* CompositionViewController.swift in Sources */,
 				E76CEAEA219404EB0080F456 /* AppDelegate.swift in Sources */,
+				E76CEB002194062A0080F456 /* CameraViewController.swift in Sources */,
+				E76CEB0521940EEE0080F456 /* CaptureManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +373,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F3X6AR78KA;
 				INFOPLIST_FILE = ZHCamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -292,7 +381,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = xuzhenhao.ZHCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -303,6 +392,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F3X6AR78KA;
 				INFOPLIST_FILE = ZHCamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +400,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = xuzhenhao.ZHCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
