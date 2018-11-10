@@ -17,6 +17,14 @@ class CameraViewController: UIViewController {
     var isRecording = false
     
     @IBOutlet weak var preview: CapturePreview!
+    let filters = ["CIPhotoEffectChrome",
+                    "CIPhotoEffectFade",
+                     "CIPhotoEffectInstant",
+                      "CIPhotoEffectMono",
+                       "CIPhotoEffectNoir",
+                        "CIPhotoEffectProcess",
+                          "CIPhotoEffectTransfer"]
+    var currentFilter: String  = "CIPhotoEffectTonal"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +42,7 @@ class CameraViewController: UIViewController {
             //1. 处理图像数据，输出结果为CIImage,作为后续展示和写入的基础数据
             let ciImage = CIImage.init(cvImageBuffer: imageBuffer)
             //加滤镜
-            let filter = CIFilter.init(name: "CIPhotoEffectTonal")!
+            let filter = CIFilter.init(name: strongSelf.currentFilter)!
             filter.setValue(ciImage, forKey: kCIInputImageKey)
             
             guard let finalImage = filter.outputImage else {
@@ -72,6 +80,11 @@ class CameraViewController: UIViewController {
                 
             })
         }
+    }
+    
+    
+    @IBAction func didClickChangeFilter(_ sender: UIButton) {
+        self.currentFilter = self.filters.randomElement()!
     }
     
     @IBAction func didClickCaptureButton(_ sender: UIButton) {

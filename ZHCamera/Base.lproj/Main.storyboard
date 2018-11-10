@@ -53,10 +53,25 @@
                                             <action selector="didClickCaptureButton:" destination="Vxn-sq-55d" eventType="touchUpInside" id="b0k-Wl-Xnn"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jd2-Kg-bYU">
+                                        <rect key="frame" x="147.5" y="0.0" width="80" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="2rn-cC-zRj"/>
+                                            <constraint firstAttribute="width" constant="80" id="JTw-xp-dmH"/>
+                                        </constraints>
+                                        <state key="normal" title="切换滤镜">
+                                            <color key="titleColor" red="0.33725490200000002" green="0.67843137249999996" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didClickChangeFilter:" destination="Vxn-sq-55d" eventType="touchUpInside" id="WHJ-5G-Yg8"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="61b-TP-Xsy" firstAttribute="centerX" secondItem="Zre-Oz-1Pf" secondAttribute="centerX" id="ILe-Yu-biH"/>
+                                    <constraint firstItem="jd2-Kg-bYU" firstAttribute="top" secondItem="Zre-Oz-1Pf" secondAttribute="top" id="SXq-oS-NqD"/>
+                                    <constraint firstItem="jd2-Kg-bYU" firstAttribute="centerX" secondItem="Zre-Oz-1Pf" secondAttribute="centerX" id="cgO-t1-HOM"/>
                                     <constraint firstAttribute="bottom" secondItem="61b-TP-Xsy" secondAttribute="bottom" constant="20" id="u96-Wm-sJm"/>
                                 </constraints>
                             </view>
