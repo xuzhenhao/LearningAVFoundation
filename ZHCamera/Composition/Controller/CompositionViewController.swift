@@ -10,6 +10,9 @@ import UIKit
 
 class CompositionViewController: UIViewController {
 
+    class func compositionViewController() -> UIViewController {
+        return UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CompositionViewController")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

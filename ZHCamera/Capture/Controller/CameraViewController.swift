@@ -26,6 +26,10 @@ class CameraViewController: UIViewController {
                           "CIPhotoEffectTransfer"]
     var currentFilter: String  = "CIPhotoEffectTonal"
     
+    class func cameraViewController() -> UIViewController {
+        return UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CameraViewController")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
