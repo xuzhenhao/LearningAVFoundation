@@ -107,8 +107,6 @@ class CaptureManager: NSObject {
             return
         }
         
-        //写入配置,AVAssetWriter
-        
         completion(true,nil)
     }
     // MARK: - Session operation
