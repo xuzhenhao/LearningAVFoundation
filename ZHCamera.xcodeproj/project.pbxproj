@@ -22,9 +22,6 @@
 		E76CEB02219408FC0080F456 /* CapturePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76CEB01219408FC0080F456 /* CapturePreview.swift */; };
 		E76CEB0521940EEE0080F456 /* CaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76CEB0421940EEE0080F456 /* CaptureManager.swift */; };
 		E772E8B6219442A50035E819 /* VideoWriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E772E8B5219442A50035E819 /* VideoWriteManager.swift */; };
-		E7B153CB219BD03D006775EB /* ZHMediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B153CA219BD03D006775EB /* ZHMediaItem.swift */; };
-		E7B153CD219BF244006775EB /* ZHVideoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B153CC219BF244006775EB /* ZHVideoItem.swift */; };
-		E7B9173C219BCDDC00F1DD8C /* ZHTimelineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B9173B219BCDDC00F1DD8C /* ZHTimelineItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,9 +42,6 @@
 		E76CEB01219408FC0080F456 /* CapturePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePreview.swift; sourceTree = "<group>"; };
 		E76CEB0421940EEE0080F456 /* CaptureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureManager.swift; sourceTree = "<group>"; };
 		E772E8B5219442A50035E819 /* VideoWriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoWriteManager.swift; sourceTree = "<group>"; };
-		E7B153CA219BD03D006775EB /* ZHMediaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHMediaItem.swift; sourceTree = "<group>"; };
-		E7B153CC219BF244006775EB /* ZHVideoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHVideoItem.swift; sourceTree = "<group>"; };
-		E7B9173B219BCDDC00F1DD8C /* ZHTimelineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHTimelineItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,9 +163,6 @@
 		E7B91739219BC3B100F1DD8C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E7B9173B219BCDDC00F1DD8C /* ZHTimelineItem.swift */,
-				E7B153CA219BD03D006775EB /* ZHMediaItem.swift */,
-				E7B153CC219BF244006775EB /* ZHVideoItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -259,16 +250,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7B153CD219BF244006775EB /* ZHVideoItem.swift in Sources */,
 				E76CEAEC219404EB0080F456 /* ViewController.swift in Sources */,
 				E772E8B6219442A50035E819 /* VideoWriteManager.swift in Sources */,
 				E76CEB02219408FC0080F456 /* CapturePreview.swift in Sources */,
 				E7252167219581B200BD8FEF /* CompositionViewController.swift in Sources */,
 				E76CEAEA219404EB0080F456 /* AppDelegate.swift in Sources */,
 				E76CEB002194062A0080F456 /* CameraViewController.swift in Sources */,
-				E7B153CB219BD03D006775EB /* ZHMediaItem.swift in Sources */,
 				E76CEB0521940EEE0080F456 /* CaptureManager.swift in Sources */,
-				E7B9173C219BCDDC00F1DD8C /* ZHTimelineItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

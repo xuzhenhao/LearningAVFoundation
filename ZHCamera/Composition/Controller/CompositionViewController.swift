@@ -25,8 +25,8 @@ class CompositionViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        prepareResource()
         
+        prepareResource()
         buildCompositionVideoTracks()
         buildCompositionAudioTracks()
         buildVideoComposition()
