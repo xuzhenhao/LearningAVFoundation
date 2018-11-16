@@ -10,6 +10,11 @@ import UIKit
 import AVFoundation
 import Photos
 
+enum TransitionType {
+    case Dissolve//溶解效果
+    case Push
+}
+
 class CompositionViewController: UIViewController {
     var videos: [AVAsset] = []
     let composition = AVMutableComposition()
@@ -37,6 +42,7 @@ class CompositionViewController: UIViewController {
             videos.append(asset)
         }
     }
+    // MARK: - 编辑视频
     func buildCompositionVideoTracks() {
         //使用invalid，系统会自动分配一个有效的trackId
         let trackId = kCMPersistentTrackID_Invalid
@@ -99,7 +105,6 @@ class CompositionViewController: UIViewController {
         let videoComposition = AVMutableVideoComposition.init(propertiesOf: composition)
         self.videoComposition = videoComposition
         filterTransitionInstructions(of: videoComposition)
-        
     }
     /// 过滤出转场动画指令
     func filterTransitionInstructions(of videoCompostion: AVMutableVideoComposition) -> Void {
@@ -109,6 +114,7 @@ class CompositionViewController: UIViewController {
             guard instruct.layerInstructions.count > 1 else {
                 continue
             }
+            var transitionType: TransitionType
             //需要判断转场动画是从A轨道到B轨道，还是B-A
             var fromLayerInstruction: AVMutableVideoCompositionLayerInstruction
             var toLayerInstruction: AVMutableVideoCompositionLayerInstruction
@@ -119,27 +125,35 @@ class CompositionViewController: UIViewController {
             if beforeTrackId == tempTrackId {
                 fromLayerInstruction = instruct.layerInstructions[0] as! AVMutableVideoCompositionLayerInstruction
                 toLayerInstruction = instruct.layerInstructions[1] as! AVMutableVideoCompositionLayerInstruction
+                transitionType = TransitionType.Dissolve
             }else{
                 fromLayerInstruction = instruct.layerInstructions[1] as! AVMutableVideoCompositionLayerInstruction
                 toLayerInstruction = instruct.layerInstructions[0] as! AVMutableVideoCompositionLayerInstruction
+                transitionType = TransitionType.Push
             }
-            setupTransition(for: instruct, fromLayer: fromLayerInstruction, toLayer: toLayerInstruction)
+            
+            setupTransition(for: instruct, fromLayer: fromLayerInstruction, toLayer: toLayerInstruction,type: transitionType)
         }
     }
     /// 设置转场动画
-    func setupTransition(for instruction: AVMutableVideoCompositionInstruction, fromLayer: AVMutableVideoCompositionLayerInstruction, toLayer: AVMutableVideoCompositionLayerInstruction) {
+    func setupTransition(for instruction: AVMutableVideoCompositionInstruction, fromLayer: AVMutableVideoCompositionLayerInstruction, toLayer: AVMutableVideoCompositionLayerInstruction ,type: TransitionType) {
         let identityTransform = CGAffineTransform.identity
         let timeRange = instruction.timeRange
         let videoWidth = self.videoComposition.renderSize.width
-        let fromEndTranform = CGAffineTransform(translationX: -videoWidth, y: 0)
-        let toStartTranform = CGAffineTransform(translationX: videoWidth, y: 0)
+        if type == TransitionType.Push{
+            let fromEndTranform = CGAffineTransform(translationX: -videoWidth, y: 0)
+            let toStartTranform = CGAffineTransform(translationX: videoWidth, y: 0)
+            
+            fromLayer.setTransformRamp(fromStart: identityTransform, toEnd: fromEndTranform, timeRange: timeRange)
+            toLayer.setTransformRamp(fromStart: toStartTranform, toEnd: identityTransform, timeRange: timeRange)
+        }else {
+            fromLayer.setOpacityRamp(fromStartOpacity: 1.0, toEndOpacity: 0.0, timeRange: timeRange)
+        }
         
-        fromLayer.setTransformRamp(fromStart: identityTransform, toEnd: fromEndTranform, timeRange: timeRange)
-        toLayer.setTransformRamp(fromStart: toStartTranform, toEnd: identityTransform, timeRange: timeRange)
         //重新赋值
         instruction.layerInstructions = [fromLayer,toLayer]
     }
-    
+    // MARK: - 导出合成的视频
     func export(){
         let session = AVAssetExportSession.init(asset: composition.copy() as! AVAsset, presetName: AVAssetExportPreset640x480)
         session?.videoComposition = videoComposition
@@ -157,6 +171,7 @@ class CompositionViewController: UIViewController {
             }
         })
     }
+    // MARK: - utils
     private class func createTemplateFileURL() -> URL {
         
         NSHomeDirectory()
@@ -178,14 +193,11 @@ class CompositionViewController: UIViewController {
         })
     }
     private func showSaveResult(isSuccess: Bool) {
-        let message = isSuccess ? "保存成功" : "保存失败"
+        let message = isSuccess ? "已保存到相册" : "保存失败"
         
         let alertController =  UIAlertController.init(title: nil, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction.init(title: "确定", style: .default, handler: { (action) in
-            
         }))
         self .present(alertController, animated: true, completion: nil)
     }
-    
-
 }

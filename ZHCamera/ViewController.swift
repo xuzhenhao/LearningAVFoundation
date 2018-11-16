@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     let items = ["拍摄+滤镜+导出",
-                 "视频编辑"]
+                 "视频片段合成+转场动画"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
