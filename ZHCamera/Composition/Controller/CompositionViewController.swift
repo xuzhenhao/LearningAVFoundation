@@ -22,7 +22,8 @@ class CompositionViewController: UIViewController {
         super.viewDidLoad()
         prepareResource()
         
-        buildCompositionTracks()
+        buildCompositionVideoTracks()
+        buildCompositionAudioTracks()
         buildVideoComposition()
         export()
     }
@@ -36,7 +37,7 @@ class CompositionViewController: UIViewController {
             videos.append(asset)
         }
     }
-    func buildCompositionTracks() {
+    func buildCompositionVideoTracks() {
         //使用invalid，系统会自动分配一个有效的trackId
         let trackId = kCMPersistentTrackID_Invalid
         //创建AB两条视频轨道，视频片段交叉插入到轨道中，通过对两条轨道的叠加编辑各种效果。如0-5秒内，A轨道内容alpha逐渐到0，B轨道内容alpha逐渐到1
@@ -67,6 +68,25 @@ class CompositionViewController: UIViewController {
                 cursorTime = CMTimeAdd(cursorTime, value.duration)
                 //光标回退转场动画时长的距离，这一段前后视频重叠部分组合成转场动画
                 cursorTime = CMTimeSubtract(cursorTime, transitionDuration)
+            } catch {
+                
+            }
+        }
+    }
+    func buildCompositionAudioTracks() {
+        let trackId = kCMPersistentTrackID_Invalid
+        guard let trackAudio = composition.addMutableTrack(withMediaType: .audio, preferredTrackID: trackId) else {
+            return
+        }
+        var cursorTime = CMTime.zero
+        for (_,value) in videos.enumerated() {
+            //获取视频资源中的音频轨道
+            guard let assetTrack = value.tracks(withMediaType: .audio).first else {
+                continue
+            }
+            do {
+                try trackAudio.insertTimeRange(CMTimeRange(start: .zero, duration: value.duration), of: assetTrack, at: cursorTime)
+                cursorTime = CMTimeAdd(cursorTime, value.duration)
             } catch {
                 
             }
@@ -130,7 +150,9 @@ class CompositionViewController: UIViewController {
             let status = session?.status
             if status == AVAssetExportSession.Status.completed {
                 strongSelf.saveToAlbum(atURL: session!.outputURL!, complete: { (success) in
-                    strongSelf.showSaveResult(isSuccess: success)
+                    DispatchQueue.main.async {
+                       strongSelf.showSaveResult(isSuccess: success)
+                    }
                 })
             }
         })
