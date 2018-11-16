@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		E7252167219581B200BD8FEF /* CompositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7252166219581B200BD8FEF /* CompositionViewController.swift */; };
-		E7252169219581D900BD8FEF /* Marvel Studios.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E7252168219581D900BD8FEF /* Marvel Studios.mp4 */; };
+		E7531545219D70D500FC1243 /* 01_nebula.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E7531540219D70D400FC1243 /* 01_nebula.mp4 */; };
+		E7531546219D70D500FC1243 /* 02_blackhole.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E7531541219D70D400FC1243 /* 02_blackhole.mp4 */; };
+		E7531547219D70D500FC1243 /* 03_nebula.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E7531542219D70D500FC1243 /* 03_nebula.mp4 */; };
+		E7531548219D70D500FC1243 /* 04_quasar.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E7531543219D70D500FC1243 /* 04_quasar.mp4 */; };
+		E7531549219D70D500FC1243 /* 05_blackhole.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E7531544219D70D500FC1243 /* 05_blackhole.mp4 */; };
 		E76CEAEA219404EB0080F456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76CEAE9219404EB0080F456 /* AppDelegate.swift */; };
 		E76CEAEC219404EB0080F456 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76CEAEB219404EB0080F456 /* ViewController.swift */; };
 		E76CEAEF219404EB0080F456 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E76CEAED219404EB0080F456 /* Main.storyboard */; };
@@ -18,11 +22,18 @@
 		E76CEB02219408FC0080F456 /* CapturePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76CEB01219408FC0080F456 /* CapturePreview.swift */; };
 		E76CEB0521940EEE0080F456 /* CaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76CEB0421940EEE0080F456 /* CaptureManager.swift */; };
 		E772E8B6219442A50035E819 /* VideoWriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E772E8B5219442A50035E819 /* VideoWriteManager.swift */; };
+		E7B153CB219BD03D006775EB /* ZHMediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B153CA219BD03D006775EB /* ZHMediaItem.swift */; };
+		E7B153CD219BF244006775EB /* ZHVideoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B153CC219BF244006775EB /* ZHVideoItem.swift */; };
+		E7B9173C219BCDDC00F1DD8C /* ZHTimelineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B9173B219BCDDC00F1DD8C /* ZHTimelineItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E7252166219581B200BD8FEF /* CompositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionViewController.swift; sourceTree = "<group>"; };
-		E7252168219581D900BD8FEF /* Marvel Studios.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marvel Studios.mp4"; sourceTree = "<group>"; };
+		E7531540219D70D400FC1243 /* 01_nebula.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 01_nebula.mp4; sourceTree = "<group>"; };
+		E7531541219D70D400FC1243 /* 02_blackhole.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 02_blackhole.mp4; sourceTree = "<group>"; };
+		E7531542219D70D500FC1243 /* 03_nebula.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 03_nebula.mp4; sourceTree = "<group>"; };
+		E7531543219D70D500FC1243 /* 04_quasar.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 04_quasar.mp4; sourceTree = "<group>"; };
+		E7531544219D70D500FC1243 /* 05_blackhole.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 05_blackhole.mp4; sourceTree = "<group>"; };
 		E76CEAE6219404EB0080F456 /* ZHCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E76CEAE9219404EB0080F456 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E76CEAEB219404EB0080F456 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +45,9 @@
 		E76CEB01219408FC0080F456 /* CapturePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePreview.swift; sourceTree = "<group>"; };
 		E76CEB0421940EEE0080F456 /* CaptureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureManager.swift; sourceTree = "<group>"; };
 		E772E8B5219442A50035E819 /* VideoWriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoWriteManager.swift; sourceTree = "<group>"; };
+		E7B153CA219BD03D006775EB /* ZHMediaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHMediaItem.swift; sourceTree = "<group>"; };
+		E7B153CC219BF244006775EB /* ZHVideoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHVideoItem.swift; sourceTree = "<group>"; };
+		E7B9173B219BCDDC00F1DD8C /* ZHTimelineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHTimelineItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +64,8 @@
 		E725216321957A0B00BD8FEF /* Composition */ = {
 			isa = PBXGroup;
 			children = (
+				E7B9173A219BC40200F1DD8C /* View */,
+				E7B91739219BC3B100F1DD8C /* Model */,
 				E72521652195818A00BD8FEF /* Controller */,
 			);
 			path = Composition;
@@ -58,7 +74,11 @@
 		E72521642195817300BD8FEF /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				E7252168219581D900BD8FEF /* Marvel Studios.mp4 */,
+				E7531540219D70D400FC1243 /* 01_nebula.mp4 */,
+				E7531541219D70D400FC1243 /* 02_blackhole.mp4 */,
+				E7531542219D70D500FC1243 /* 03_nebula.mp4 */,
+				E7531543219D70D500FC1243 /* 04_quasar.mp4 */,
+				E7531544219D70D500FC1243 /* 05_blackhole.mp4 */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -146,6 +166,23 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		E7B91739219BC3B100F1DD8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E7B9173B219BCDDC00F1DD8C /* ZHTimelineItem.swift */,
+				E7B153CA219BD03D006775EB /* ZHMediaItem.swift */,
+				E7B153CC219BF244006775EB /* ZHVideoItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E7B9173A219BC40200F1DD8C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -204,10 +241,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7531545219D70D500FC1243 /* 01_nebula.mp4 in Resources */,
+				E7531546219D70D500FC1243 /* 02_blackhole.mp4 in Resources */,
 				E76CEAF4219404ED0080F456 /* LaunchScreen.storyboard in Resources */,
+				E7531547219D70D500FC1243 /* 03_nebula.mp4 in Resources */,
+				E7531548219D70D500FC1243 /* 04_quasar.mp4 in Resources */,
 				E76CEAF1219404ED0080F456 /* Assets.xcassets in Resources */,
 				E76CEAEF219404EB0080F456 /* Main.storyboard in Resources */,
-				E7252169219581D900BD8FEF /* Marvel Studios.mp4 in Resources */,
+				E7531549219D70D500FC1243 /* 05_blackhole.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,13 +259,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7B153CD219BF244006775EB /* ZHVideoItem.swift in Sources */,
 				E76CEAEC219404EB0080F456 /* ViewController.swift in Sources */,
 				E772E8B6219442A50035E819 /* VideoWriteManager.swift in Sources */,
 				E76CEB02219408FC0080F456 /* CapturePreview.swift in Sources */,
 				E7252167219581B200BD8FEF /* CompositionViewController.swift in Sources */,
 				E76CEAEA219404EB0080F456 /* AppDelegate.swift in Sources */,
 				E76CEB002194062A0080F456 /* CameraViewController.swift in Sources */,
+				E7B153CB219BD03D006775EB /* ZHMediaItem.swift in Sources */,
 				E76CEB0521940EEE0080F456 /* CaptureManager.swift in Sources */,
+				E7B9173C219BCDDC00F1DD8C /* ZHTimelineItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
