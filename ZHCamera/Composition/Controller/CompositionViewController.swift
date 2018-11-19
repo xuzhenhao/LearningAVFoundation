@@ -19,17 +19,23 @@ class CompositionViewController: UIViewController {
     var videos: [AVAsset] = []
     let composition = AVMutableComposition()
     var videoComposition: AVMutableVideoComposition!
+    var overLayer: CALayer?
     
     class func compositionViewController() -> UIViewController {
         return UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CompositionViewController")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //加载bundle中的视频
         prepareResource()
+        //构建视频轨道
         buildCompositionVideoTracks()
+        //构建音频轨道
         buildCompositionAudioTracks()
+        //设置视频效果
         buildVideoComposition()
+        //添加贴纸效果
+        buildOverLayer()
         export()
     }
     
@@ -153,12 +159,45 @@ class CompositionViewController: UIViewController {
         //重新赋值
         instruction.layerInstructions = [fromLayer,toLayer]
     }
+    func buildOverLayer() {
+        let layer = CALayer()
+        layer.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        layer.opacity = 0;
+        layer.backgroundColor = UIColor.yellow.cgColor
+        
+        let fadeInFadeOutAni = CAKeyframeAnimation(keyPath: "opacity")
+        fadeInFadeOutAni.values = [0.0,1.0,1.0,0.0]
+        fadeInFadeOutAni.keyTimes = [0.0,0.25,0.75,1]
+        //动画时间与时间轴时间绑定
+        fadeInFadeOutAni.beginTime = CMTimeGetSeconds(CMTime(seconds: 3, preferredTimescale: 1))
+        fadeInFadeOutAni.duration = CMTimeGetSeconds(CMTime(seconds: 5, preferredTimescale: 1))
+        fadeInFadeOutAni.isRemovedOnCompletion = false
+        
+        layer.add(fadeInFadeOutAni, forKey: nil)
+        overLayer = layer
+        
+    }
     // MARK: - 导出合成的视频
     func export(){
         let session = AVAssetExportSession.init(asset: composition.copy() as! AVAsset, presetName: AVAssetExportPreset640x480)
-        session?.videoComposition = videoComposition
+        
         session?.outputURL = CompositionViewController.createTemplateFileURL()
         session?.outputFileType = AVFileType.mp4
+        if overLayer != nil {
+            let videoLayer = CALayer()
+            videoLayer.frame = CGRect(x: 0, y: 0, width: 1280, height: 720)
+            let animateLayer = CALayer()
+            animateLayer.frame = CGRect(x: 0, y: 0, width: 1280, height: 720)
+            //videoLayer必须在animateLayer层级中
+            animateLayer.addSublayer(videoLayer)
+            animateLayer.addSublayer(overLayer!)
+            animateLayer.isGeometryFlipped = true
+            
+            let animateTool = AVVideoCompositionCoreAnimationTool(postProcessingAsVideoLayer: videoLayer, in: animateLayer)
+            videoComposition.animationTool = animateTool
+        }
+        session?.videoComposition = videoComposition
+        
         session?.exportAsynchronously(completionHandler: {[weak self] in
             guard let strongSelf = self else {return}
             let status = session?.status
